@@ -2,9 +2,9 @@
 
 namespace Strategy.Models.Template
 {
-    public abstract class TemplateDeImpostoCondicional : IImposto
+    public abstract class TemplateDeImpostoCondicional : Imposto
     {
-        public double Calcula(Orcamento orcamento)
+        public override double Calcula(Orcamento orcamento)
         {
             if (DeveUserMaximaTaxa(orcamento))
             {
