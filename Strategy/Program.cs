@@ -3,16 +3,15 @@ using Strategy.Controller;
 using Strategy.Models;
 using Strategy.Service.Calculo;
 
-Console.WriteLine("Hello, World!");
-CalculoDeImposto calculador = new CalculoDeImposto();
-Orcamento orcamento = new Orcamento(500.0);
+Orcamento reforma = new Orcamento(500);
+Console.WriteLine(reforma.Valor);
+reforma.ApicaDescontoExtra();
+Console.WriteLine(reforma.Valor);
 
-calculador.Calcula(orcamento, new ISS(new ICMS()));
+reforma.Aprova();
 
-calculador.Calcula(orcamento, new ICMS(new ISS()));
+reforma.ApicaDescontoExtra();
+Console.WriteLine(reforma.Valor);
 
-calculador.Calcula(orcamento, new ImpostoMuitoAlto(new ISS()));
+reforma.Finaliza();
 
-
-Console.WriteLine($"ICPP");
-calculador.Calcula(orcamento, new ICPP(new IKCV()));
