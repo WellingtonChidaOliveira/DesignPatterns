@@ -7,10 +7,12 @@ Console.WriteLine("Hello, World!");
 CalculoDeImposto calculador = new CalculoDeImposto();
 Orcamento orcamento = new Orcamento(500.0);
 
-calculador.Calcula(orcamento, new ISS());
+calculador.Calcula(orcamento, new ISS(new ICMS()));
 
-calculador.Calcula(orcamento, new ICMS());
+calculador.Calcula(orcamento, new ICMS(new ISS()));
+
+calculador.Calcula(orcamento, new ImpostoMuitoAlto(new ISS()));
 
 
 Console.WriteLine($"ICPP");
-calculador.Calcula(orcamento, new ICPP());
+calculador.Calcula(orcamento, new ICPP(new IKCV()));

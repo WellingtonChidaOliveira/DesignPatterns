@@ -6,6 +6,8 @@ namespace Strategy.Service.Calculo
 {
     internal class IKCV : TemplateDeImpostoCondicional
     {
+        public IKCV(Imposto outroImposto) : base(outroImposto) { }
+        public IKCV() : base() { }
         //Template Method
         protected override bool DeveUserMaximaTaxa(Orcamento orcamento)
         {

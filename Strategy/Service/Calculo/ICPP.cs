@@ -6,6 +6,8 @@ namespace Strategy.Service.Calculo
 {
     internal class ICPP : TemplateDeImpostoCondicional
     {
+        public ICPP(Imposto outroImposto) : base(outroImposto) { }
+        public ICPP() : base() { }
 
         //Template Method
         protected override bool DeveUserMaximaTaxa(Orcamento orcamento)
@@ -15,7 +17,7 @@ namespace Strategy.Service.Calculo
 
         protected override double MaximaTaxacao(Orcamento orcamento)
         {
-            return orcamento.Valor * 0.07;
+            return orcamento.Valor * 0.07 ;
         }
 
         protected override double MinimaTaxacao(Orcamento orcamento)

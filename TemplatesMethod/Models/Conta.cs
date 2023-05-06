@@ -10,6 +10,8 @@
         public string Endereco { get; set; }
         public DateTime Data { get; set; }
 
+        public double Saldo { get; set; }
+
         public Conta(string nome, string nomeDoBanco, string telefone,string email ,string endereco)
         {
             Nome = nome;
