@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Strategy", "Strategy\Strate
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChainResposability", "ChainResposability\ChainResposability.csproj", "{7CF942BC-F820-4A96-A225-5C00C40D8FD0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TemplateMethod", "TemplateMethod\TemplateMethod.csproj", "{E600A87C-7B4A-41DB-BEBA-6A788F2338C8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TemplatesMethod", "TemplatesMethod\TemplatesMethod.csproj", "{4863B67A-11F4-41CF-A314-ED4C06E2EC06}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +23,10 @@ Global
 		{7CF942BC-F820-4A96-A225-5C00C40D8FD0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7CF942BC-F820-4A96-A225-5C00C40D8FD0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7CF942BC-F820-4A96-A225-5C00C40D8FD0}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E600A87C-7B4A-41DB-BEBA-6A788F2338C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E600A87C-7B4A-41DB-BEBA-6A788F2338C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E600A87C-7B4A-41DB-BEBA-6A788F2338C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E600A87C-7B4A-41DB-BEBA-6A788F2338C8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4863B67A-11F4-41CF-A314-ED4C06E2EC06}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4863B67A-11F4-41CF-A314-ED4C06E2EC06}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4863B67A-11F4-41CF-A314-ED4C06E2EC06}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4863B67A-11F4-41CF-A314-ED4C06E2EC06}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

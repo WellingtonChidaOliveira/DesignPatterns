@@ -1,12 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Strategy.Models.Interfacer;
 
 namespace Strategy.Models.Template
 {
-    internal class TemplateDeImpostoCondicional
+    public abstract class TemplateDeImpostoCondicional : IImposto
     {
+        public double Calcula(Orcamento orcamento)
+        {
+            if (DeveUserMaximaTaxa(orcamento))
+            {
+                return MaximaTaxacao(orcamento);
+            }
+            return MinimaTaxacao(orcamento);
+        }
+
+        protected abstract bool DeveUserMaximaTaxa(Orcamento orcamento);
+
+        protected abstract double MaximaTaxacao(Orcamento orcamento);
+
+        protected abstract double MinimaTaxacao(Orcamento orcamento);
     }
 }

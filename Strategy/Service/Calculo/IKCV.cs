@@ -7,18 +7,18 @@ namespace Strategy.Service.Calculo
     internal class IKCV : TemplateDeImpostoCondicional
     {
         //Template Method
-        public override bool DeveUserMaximaTaxa(Orcamento orcamento)
+        protected override bool DeveUserMaximaTaxa(Orcamento orcamento)
         {
             return orcamento.Valor > 500 && temItemMaiorQue100Reais(orcamento);
             
         }
 
-        public override double MaximaTaxacao(Orcamento orcamento)
+        protected override double MaximaTaxacao(Orcamento orcamento)
         {
             return orcamento.Valor * 0.10;
         }
 
-        public override double MinimaTaxacao(Orcamento orcamento)
+        protected override double MinimaTaxacao(Orcamento orcamento)
         {
             return orcamento.Valor * 0.06;
         }

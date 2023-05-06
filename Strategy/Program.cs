@@ -10,3 +10,7 @@ Orcamento orcamento = new Orcamento(500.0);
 calculador.Calcula(orcamento, new ISS());
 
 calculador.Calcula(orcamento, new ICMS());
+
+
+Console.WriteLine($"ICPP");
+calculador.Calcula(orcamento, new ICPP());
