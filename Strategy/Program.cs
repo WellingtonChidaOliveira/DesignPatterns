@@ -4,10 +4,15 @@ using Strategy.Service.Desconstos;
 using Strategy.Service.Email;
 using Strategy.Service.Repositorie;
 
-NotaFiscalBuilder builder = new NotaFiscalBuilder();
-builder.AdicionaAcao(new EnviaPorEmail());
-builder.AdicionaAcao(new NotaFiscalDao());
-builder.AdicionaAcao(new Multiplicador(2));
+NotaFiscalBuilder builder = new NotaFiscalBuilder(new List<Strategy.Models.Interfaces.IAcaoAposGerarNota>
+{
+    new EnviaPorEmail(),
+    new NotaFiscalDao(),
+    new Multiplicador(2)
+});
+//builder.AdicionaAcao(new EnviaPorEmail());
+//builder.AdicionaAcao(new NotaFiscalDao());
+//builder.AdicionaAcao(new Multiplicador(2));
 
 builder.RazaoSocialNotaFiscal("").
     CnpjNotaFiscal("").

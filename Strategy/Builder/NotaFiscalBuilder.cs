@@ -23,6 +23,10 @@ namespace Strategy.Builder
         {
             DataDeEmissao= DateTime.Now;
         }
+        public NotaFiscalBuilder(List<IAcaoAposGerarNota> acoes)
+        {
+                Acoes = acoes;
+        }
         public NotaFiscal Creator()
         {
             var nf = new NotaFiscal(RazaoSocial, Cnpj, ValorBruto, Imposto, DataDeEmissao, Observacoes, Itens);
