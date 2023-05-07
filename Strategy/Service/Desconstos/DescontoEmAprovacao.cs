@@ -6,9 +6,20 @@ namespace Strategy.Service.Desconstos
 {
     public class DescontoEmAprovacao : IEstadoOrcamento
     {
+
         public void AplicaDescontoExtra(Orcamento orcamento)
         {
-            orcamento.Valor -= orcamento.Valor * 0.05;
+            if (orcamento.DescontoAplicado)
+            {
+                orcamento.Valor -= orcamento.Valor * 0.05;
+                orcamento.DescontoAplicado = true;
+            } 
+            else
+            {
+                throw new Exception("Desconto já aplicado");
+
+            }
+
         }
 
         public void Aprova(Orcamento orcamento)

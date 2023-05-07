@@ -1,4 +1,7 @@
-﻿namespace TemplatesMethod.Models
+﻿using TemplatesMethod.Models.Interface;
+using TemplatesMethod.States;
+
+namespace TemplatesMethod.Models
 {
     public class Conta
     {
@@ -12,6 +15,8 @@
 
         public double Saldo { get; set; }
 
+        public ISituacao Situacao { get; set; }
+
         public Conta(string nome, string nomeDoBanco, string telefone,string email ,string endereco)
         {
             Nome = nome;
@@ -20,6 +25,18 @@
             Endereco = endereco;
             Email = email;
             Data = DateTime.Now;
+            Situacao = new Positivo();
         }
+
+        public void Saca(double valor)
+        {
+            Situacao.Saca(this, valor);
+        }
+
+        public void Deposita(double valor)
+        {
+            Situacao.Deposita(this, valor);
+        }
+
     }
 }

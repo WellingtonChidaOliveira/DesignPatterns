@@ -8,7 +8,15 @@ namespace Strategy.Service.Desconstos
     {
         public void AplicaDescontoExtra(Orcamento orcamento)
         {
-            orcamento.Valor -= orcamento.Valor * 0.02;
+            if (!orcamento.DescontoAplicado)
+            {
+                orcamento.Valor -= orcamento.Valor * 0.02;
+                orcamento.DescontoAplicado = true;
+            }
+            else
+            {
+                throw new Exception("Desconto já aplicado");
+            }
         }
 
         public void Aprova(Orcamento orcamento)

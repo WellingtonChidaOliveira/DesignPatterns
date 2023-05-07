@@ -11,11 +11,14 @@ namespace Strategy.Models
 
         public IEstadoOrcamento EstadoAtual { get; set; }
 
+        public bool DescontoAplicado { get; set; }
+
         public Orcamento(double valor)
         {
             Valor = valor;
             Itens = new List<Item>();
             EstadoAtual = new DescontoEmAprovacao();
+            DescontoAplicado = false;
         }
         public void AdicionarItem(Item item)
         {
