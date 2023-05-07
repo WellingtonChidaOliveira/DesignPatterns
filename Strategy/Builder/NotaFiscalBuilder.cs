@@ -1,4 +1,5 @@
 ﻿using Strategy.Models;
+using Strategy.Models.Interfaces;
 
 namespace Strategy.Builder
 {
@@ -16,13 +17,20 @@ namespace Strategy.Builder
 
         public List<ItemDaNota> Itens { get; set; }
 
+        private List<IAcaoAposGerarNota> Acoes { get; set; }
+
         public NotaFiscalBuilder()
         {
             DataDeEmissao= DateTime.Now;
         }
         public NotaFiscal Creator()
         {
-            return new NotaFiscal(RazaoSocial, Cnpj, ValorBruto, Imposto, DataDeEmissao, Observacoes, Itens);
+            var nf = new NotaFiscal(RazaoSocial, Cnpj, ValorBruto, Imposto, DataDeEmissao, Observacoes, Itens);
+            foreach (var acao in Acoes)
+            {
+                acao.Executa(nf);
+            }
+            return nf;
         }
 
         public NotaFiscalBuilder RazaoSocialNotaFiscal(string razaoSocial)
@@ -52,6 +60,11 @@ namespace Strategy.Builder
         {
             this.DataDeEmissao = dataDeEmissao;
             return this;
+        }
+
+        public void AdicionaAcao(IAcaoAposGerarNota acao)
+        {
+            Acoes.Add(acao);
         }
 
     }

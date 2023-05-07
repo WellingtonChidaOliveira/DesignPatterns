@@ -5,7 +5,7 @@
         public string RazaoSocial { get; set; }
         public string Cnpj { get; set; }
 
-        private double ValorBruto { get; set; }
+        public double ValorBruto { get; set; }
 
         private double Imposto { get; set; }
 
