@@ -16,7 +16,10 @@ namespace Strategy.Builder
 
         public List<ItemDaNota> Itens { get; set; }
 
-
+        public NotaFiscalBuilder()
+        {
+            DataDeEmissao= DateTime.Now;
+        }
         public NotaFiscal Creator()
         {
             return new NotaFiscal(RazaoSocial, Cnpj, ValorBruto, Imposto, DataDeEmissao, Observacoes, Itens);
