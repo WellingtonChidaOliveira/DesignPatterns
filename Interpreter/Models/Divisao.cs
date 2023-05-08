@@ -12,6 +12,12 @@ namespace Interpreter.Models
             _esquerda = esquerda;
             _direita = direita;
         }
+
+        public void Aceita(IVisitor impressora)
+        {
+            return impressora.ImprimeDivisao(this);
+        }
+
         public int Avalia()
         {
             int valorEsquerda = _esquerda.Avalia();

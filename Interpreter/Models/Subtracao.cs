@@ -4,13 +4,18 @@ namespace Interpreter.Models
 {
     public class Subtracao : IExpressao
     {
-        IExpressao _esquerda;
-        IExpressao _direita;
+        public IExpressao _esquerda;
+        public IExpressao _direita;
 
         public Subtracao(IExpressao esquerda, IExpressao direita)
         {
             _esquerda = esquerda;
             _direita = direita;
+        }
+
+        public void Aceita(IVisitor impressora)
+        {
+            impressora.ImprimeSubtracao(this);
         }
 
         public int Avalia()

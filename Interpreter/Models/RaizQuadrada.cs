@@ -4,11 +4,16 @@ namespace Interpreter.Models
 {
     public class RaizQuadrada : IExpressao
     {
-        private IExpressao _expressao;
+        public IExpressao _expressao;
 
         public RaizQuadrada( IExpressao expressao)
         {
             _expressao= expressao;
+        }
+
+        public void Aceita(IVisitor impressora)
+        {
+            impressora.ImprimeRaizQuadrada(this);
         }
 
         public int Avalia()
