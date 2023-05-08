@@ -4,8 +4,8 @@ namespace Interpreter.Models
 {
     public class Soma : IExpressao
     {
-        private IExpressao _esquerda;
-        private IExpressao _direita;
+        public IExpressao _esquerda;
+        public IExpressao _direita;
         public Soma(IExpressao esquerda, IExpressao direita)
         {
             _esquerda = esquerda;
@@ -14,7 +14,7 @@ namespace Interpreter.Models
 
         public void Aceita(IVisitor impressora)
         {
-            return impressora.ImprimeSoma(this);
+            impressora.ImprimeSoma(this);
         }
 
         public int Avalia()

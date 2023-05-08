@@ -39,12 +39,20 @@ namespace Interpreter.Models
 
         public void ImprimeSoma(Soma soma)
         {
-            throw new NotImplementedException();
+            Console.WriteLine("(");
+            soma._esquerda.Aceita(this);
+            Console.WriteLine("+");
+            soma._direita.Aceita(this);
+            Console.WriteLine(")");
         }
 
         public void ImprimeSubtracao(Subtracao subtracao)
         {
-            throw new NotImplementedException();
+            Console.WriteLine("(");
+            subtracao._esquerda.Aceita(this);
+            Console.WriteLine("-");
+            subtracao._direita.Aceita(this);
+            Console.WriteLine(")");
         }
     }
 }
